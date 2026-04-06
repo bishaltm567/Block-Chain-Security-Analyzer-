@@ -1,0 +1,3 @@
+[!] Suspicious Transactions Detected:
+{'from': 'B', 'to': 'C', 'amount': 5000}
+{'from': 'A', 'to': 'D', 'amount': 7000}
