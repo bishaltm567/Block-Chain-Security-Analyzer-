@@ -1,0 +1,35 @@
+import json
+
+# Sample transaction data (can replace with real blockchain API)
+transactions = [
+    {"from": "A", "to": "B", "amount": 10},
+    {"from": "B", "to": "C", "amount": 5000},
+    {"from": "A", "to": "D", "amount": 7000},
+    {"from": "C", "to": "A", "amount": 5},
+]
+
+THRESHOLD = 1000  # suspicious if amount > threshold
+
+def detect_suspicious_transactions(transactions):
+    suspicious = []
+    
+    for tx in transactions:
+        if tx["amount"] > THRESHOLD:
+            suspicious.append(tx)
+    
+    return suspicious
+
+def main():
+    print("🔐 Blockchain Security Analyzer\n")
+    
+    suspicious = detect_suspicious_transactions(transactions)
+    
+    if suspicious:
+        print("[!] Suspicious Transactions Detected:\n")
+        for tx in suspicious:
+            print(tx)
+    else:
+        print("[+] No suspicious activity found.")
+
+if __name__ == "__main__":
+    main()
